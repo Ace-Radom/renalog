@@ -52,11 +52,6 @@ if(BUILD_STATIC)
 
 endif()
 
-add_executable(test
-    ${PROJECT_SOURCE_DIR}/test.cpp
-)
-target_link_libraries(test renalog)
-
 if(BUILD_LOGREADER_FUNCTION)
 
     set(HEADERS_LIST
