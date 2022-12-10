@@ -64,7 +64,6 @@ if(BUILD_LOGREADER_FUNCTION)
 else()
 
     set(HEADERS_LIST
-        ${PROJECT_SOURCE_DIR}/include/renalog.h
         ${PROJECT_SOURCE_DIR}/include/renalog_basic.h
         ${PROJECT_SOURCE_DIR}/include/renalog_core.h
     )
