@@ -52,10 +52,16 @@ if(BUILD_STATIC)
 
 endif()
 
+add_executable(test
+    ${PROJECT_SOURCE_DIR}/test.cpp
+)
+target_link_libraries(test renalog)
+
 if(BUILD_LOGREADER_FUNCTION)
 
     set(HEADERS_LIST
         ${PROJECT_SOURCE_DIR}/include/renalog.h
+        ${PROJECT_SOURCE_DIR}/include/renalog_basic.h
         ${PROJECT_SOURCE_DIR}/include/renalog_core.h
         ${PROJECT_SOURCE_DIR}/include/renalog_read.h
     )
@@ -64,6 +70,7 @@ else()
 
     set(HEADERS_LIST
         ${PROJECT_SOURCE_DIR}/include/renalog.h
+        ${PROJECT_SOURCE_DIR}/include/renalog_basic.h
         ${PROJECT_SOURCE_DIR}/include/renalog_core.h
     )
 

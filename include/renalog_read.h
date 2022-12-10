@@ -7,17 +7,16 @@
 #include<vector>
 #include<stdint.h>
 #include<sys/stat.h>
+#include<io.h>
 #include<sstream>
 
-#include"renalog_core.h"
+#include"renalog_basic.h"
 
 #define LR_OK 0x00
 #define LR_LOGNOTEXIST -( 0x01 )
 #define LR_OPENLOGFILEERROR -( 0x02 )
 
 namespace rena {
-
-    typedef int errno_t;
 
     typedef struct {
         std::string info;
@@ -68,8 +67,6 @@ namespace rena {
         // functional functions:
         private:
             std::string uint_to_string( uint64_t );
-
-        
 
     }; // class renalogreader
 

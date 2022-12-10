@@ -14,32 +14,26 @@
 #include<vector>
 #include<sys/stat.h>
 
+#include"renalog_basic.h"
+
 #define L_OK 0x00
 #define L_OPENLOGFILEERROR -( 0x01 )
 
 namespace rena {
 
-    typedef int errno_t;
-
-    typedef enum {
-        INFO,
-        WARNING,
-        ERROR
-    }           lt;
-
     class renalog{
 
         // Constructor:
         public:
-            renalog( std::string );
+            renalog( std::string __log_folder  );
 
         // public interface:
         public:
-            errno_t open( std::string );
+            errno_t open( std::string __log_title  );
             void close();
 
-            void log( lt , std::string , std::string );
-            void comment( std::string );
+            void log( lt __lt , std::string __from , std::string __info );
+            void comment( std::string __info );
             void wrap();
 
         // data members:
