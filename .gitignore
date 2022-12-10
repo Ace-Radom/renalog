@@ -1,0 +1,8 @@
+bin
+debug
+release
+build
+
+test.*
+*.log
+*.code-workspace
