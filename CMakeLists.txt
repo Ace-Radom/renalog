@@ -4,9 +4,10 @@ project(renalog VERSION 1.10)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 11)
 
-option(BUILD_RELEASE "build release edition library" ON)
-option(BUILD_SHARED  "build shared library"          ON)
-option(BUILD_STATIC  "build static library"          ON)
+option(BUILD_RELEASE            "build release edition library" ON)
+option(BUILD_SHARED             "build shared library"          ON)
+option(BUILD_STATIC             "build static library"          ON)
+option(BUILD_LOGREADER_FUNCTION "build renalog reader"          ON)
 
 if(BUILD_RELEASE)
 
@@ -51,9 +52,24 @@ if(BUILD_STATIC)
 
 endif()
 
+if(BUILD_LOGREADER_FUNCTION)
+
+    set(HEADERS_LIST
+        ${PROJECT_SOURCE_DIR}/include/renalog.h
+        ${PROJECT_SOURCE_DIR}/include/renalog_core.h
+        ${PROJECT_SOURCE_DIR}/include/renalog_read.h
+    )
+
+else()
+
+    set(HEADERS_LIST
+        ${PROJECT_SOURCE_DIR}/include/renalog.h
+        ${PROJECT_SOURCE_DIR}/include/renalog_core.h
+    )
+
+endif()
+
 install(FILES
-            ${PROJECT_SOURCE_DIR}/include/renalog.h
-            ${PROJECT_SOURCE_DIR}/include/renalog_core.h
-            ${PROJECT_SOURCE_DIR}/include/renalog_read.h
+            ${HEADERS_LIST}
         DESTINATION include/renalog
 )
